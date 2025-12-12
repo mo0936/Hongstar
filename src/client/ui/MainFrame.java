@@ -25,6 +25,7 @@ public class MainFrame extends JFrame{
         JPanel photoPanel = new PhotoPanel(); // PhotoPanel.java
         tp.addTab("사진판", photoPanel); 
         
+<<<<<<< HEAD
         /*
         // 2) 1:1 채팅 및 친구 목록 (ChatManager와 통신)
         JPanel chatPanel = new ChatPanel(); // ChatPanel.java
@@ -40,6 +41,15 @@ public class MainFrame extends JFrame{
         */
         JPanel GroupPanel = new GroupPanel(); // RoomPanel.java
         tp.addTab("그룹 채팅", GroupPanel);
+=======
+        // 2) 1:1 채팅 및 친구 목록 (ChatManager와 통신)
+        JPanel chatPanel = new ChatPanel(); // ChatPanel.java
+        tp.addTab("채팅", chatPanel); 
+        
+        // 3) 그룹 채팅방 목록 (RoomManager와 통신)
+        JPanel roomPanel = new RoomPanel(); // RoomPanel.java
+        tp.addTab("그룹 채팅", roomPanel);
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
 
         // 4) 설정 탭 (유저 수정, 삭제 등)
         JPanel settingPanel = new SettingPanel(); //SettingPanel.java

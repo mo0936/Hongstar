@@ -1,9 +1,13 @@
 package server;
 
+<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
+=======
+import java.io.IOException;
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -11,7 +15,10 @@ import java.net.Socket;
  * 서버 메인 클래스.
  * - 포트 8080에서 클라이언트 접속을 기다린다.
  * - 클라이언트가 접속하면 ClientHandler 스레드를 하나 만들어서 처리한다.
+<<<<<<< HEAD
  * - 서버 운영자가 콘솔에서 메시지를 입력하면 모든 클라이언트에게 브로드캐스트됨.
+=======
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
  */
 public class ServerMain {
 
@@ -21,6 +28,7 @@ public class ServerMain {
         ServerSocket serverSocket = null;
 
         try {
+<<<<<<< HEAD
             serverSocket = new ServerSocket();
             // serverSocket.bind(new InetSocketAddress("0.0.0.0", PORT));
             serverSocket.bind(new InetSocketAddress("0.0.0.0", PORT));
@@ -29,6 +37,11 @@ public class ServerMain {
             // 🔥 서버 관리자(운영자) 콘솔 입력 스레드 시작
             startAdminConsoleThread();
 
+=======
+            serverSocket = new ServerSocket(PORT);
+            System.out.println("[서버] 포트 " + PORT + "에서 대기 중...");
+
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
             while (true) {
                 // 1. 클라이언트 접속 허용
                 Socket clientSocket = serverSocket.accept();
@@ -53,6 +66,7 @@ public class ServerMain {
             }
         }
     }
+<<<<<<< HEAD
 
     /**
      * 🔥 서버 관리자 콘솔에서 메시지를 입력 → 모든 클라이언트에게 전송
@@ -76,4 +90,6 @@ public class ServerMain {
         adminThread.setDaemon(true); // 서버 종료 시 함께 종료
         adminThread.start();
     }
+=======
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
 }

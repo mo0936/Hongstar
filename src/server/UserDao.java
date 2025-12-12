@@ -40,6 +40,7 @@ public class UserDao {
 
     // 로그인 체크
     public boolean checkLogin(String id, String pw) {
+<<<<<<< HEAD
     String sql = "SELECT id FROM user_table WHERE id = ? AND password = ?";
 
     try (
@@ -61,6 +62,25 @@ public class UserDao {
     }
 }
 
+=======
+        String sql = "SELECT id FROM user_table WHERE id = ? AND password = ?";
+
+        try (
+            Connection conn = DBUtil.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)
+        ) {
+            pstmt.setString(1, id);
+            pstmt.setString(2, pw);
+            ResultSet rs = pstmt.executeQuery();
+
+            return rs.next();
+
+        } catch (SQLException e) {
+            System.out.println("[서버] 로그인 확인 중 오류: " + e.getMessage());
+            return false;
+        }
+    }
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
 
     // 아이디 중복 검사
     public boolean existsId(String id) {
@@ -81,18 +101,24 @@ public class UserDao {
         }
     }
 
+<<<<<<< HEAD
     
 
     // 회원 삭제
     public boolean deleteUser(String id) {
 
         String sql = "DELETE FROM user_table WHERE id = ?";
+=======
+    public String getUserName(String id) {
+        String sql = "SELECT username FROM user_table WHERE id = ?"; 
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
 
         try (
             Connection conn = DBUtil.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)
         ) {
             pstmt.setString(1, id);
+<<<<<<< HEAD
             int rows = pstmt.executeUpdate();
             return rows > 0;
 
@@ -128,3 +154,19 @@ public class UserDao {
     }
 }
 }
+=======
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("username");
+            } else {
+                return null; 
+            }
+
+        } catch (SQLException e) {
+            System.out.println("[서버] 이름 조회 중 오류: " + e.getMessage());
+            return null;
+        }
+    }
+}
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e

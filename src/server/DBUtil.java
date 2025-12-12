@@ -13,7 +13,11 @@ public class DBUtil {
     "jdbc:mysql://localhost:3306/hongstar?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8";
     private static final String USER = "root";      
     private static final String PASSWORD = "0936"; 
+<<<<<<< HEAD
 
+=======
+    // 0843
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
     // MySQL 드라이버 로딩
     static {
         try {
@@ -27,4 +31,8 @@ public class DBUtil {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a89c944b510581c184008a22ce544e9e661bc85e
