@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\신경원\\Desktop\\hongstar\\lib\\mysql-connector-j-9.5.0.jar",
+        "lib/mysql-connector-j-9.5.0.jar",
+        "lib/jackson-annotations-2.20.jar",
+        "lib/jackson-core-2.20.1.jar",
+        "lib/jackson-databind-2.20.1.jar"
+    ]
+}
